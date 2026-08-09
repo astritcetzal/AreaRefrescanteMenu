@@ -1,26 +1,40 @@
-// Tu URL real de API Gateway
+// 1. Tus variables globales arriba
 const urlAPI = 'https://tdjc1hna3i.execute-api.us-east-1.amazonaws.com/meni';
+const contenedor = document.getElementById('contenedor-menu');
 
 async function obtenerMenu() {
   try {
-    // Paso A: Hacer la petición GET. 
-    // fetch() por defecto hace un GET, así que no necesitas poner toda la configuración larga.
     const respuesta = await fetch(urlAPI);
-
-    // Paso B: Convertir la respuesta cruda de internet a un formato JSON que JS entienda
     const datos = await respuesta.json();
 
-    // Verificamos en la consola del navegador que los datos llegaron correctamente
     console.log("¡Datos del menú obtenidos con éxito!", datos);
 
-    // Paso C: Aquí es donde empezarás a iterar sobre tus platillos
-    // datos.forEach(platillo => { ... lógica para crear el HTML ... });
+    // 2. El ciclo va ADENTRO de la función, después de tener los datos
+    datos.forEach(bebida => {
+        
+        // Armamos la primera parte de la tarjeta (SIN cerrar el div)
+        let tarjeta = `
+            <div class="estilo-cont">
+                <h3>${bebida.Nombre}</h3>
+                <p>Precio: $${bebida.Precio}</p>
+        `;
+
+        // Agregamos los sabores si la bebida los tiene
+        if (bebida.Sabores) {
+            tarjeta += `<p>Sabores: ${bebida.Sabores.join(', ')}</p>`; 
+        }
+
+        // Cerramos la tarjeta al final
+        tarjeta += `</div>`;
+
+        // Inyectamos todo el bloque al contenedor del HTML
+        contenedor.innerHTML += tarjeta;
+    });
 
   } catch (error) {
-    // Si no hay internet o la API falla, atrapamos el error para que la página no colapse
     console.error("Hubo un problema al cargar el menú:", error);
   }
 }
 
-// Ejecutamos la función en cuanto cargue el archivo
+// 3. Ejecutamos la función
 obtenerMenu();
