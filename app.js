@@ -15,6 +15,7 @@ async function obtenerMenu() {
         // Armamos la primera parte de la tarjeta (SIN cerrar el div)
         let tarjeta = `
             <div class="estilo-cont">
+                <img src="images/${bebida.IdProduct}.jpg" alt="${bebida.Nombre}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 20px;">
                 <h3>${bebida.Nombre}</h3>
                 <p>Precio: $${bebida.Precio}</p>
         `;
