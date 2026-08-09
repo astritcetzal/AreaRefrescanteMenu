@@ -109,3 +109,51 @@ body {
     font-size: 0.9em;
     color: #bdc3c7;
 }
+
+.precio-badge {
+    background-color: #e74c3c;
+    color: #ffffff !important; 
+    padding: 8px 20px;
+    border-radius: 25px; /* Lo convierte en una píldora ovalada */
+    display: inline-block;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); /* Le da un brillo/sombra del mismo color */
+    letter-spacing: 0.5px;
+}
+
+/* --- EL DISEÑO DE LOS SABORES --- */
+.sabores-texto {
+    font-size: 0.9em !important; /* Un poco más pequeño */
+    color: #7f8c8d !important; /* Gris suave */
+    font-style: italic; /* Letra cursiva para darle un toque elegante */
+    margin-top: 5px;
+}
+
+/* Ajustes específicos para pantallas de celular */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2.2em; /* Reduce el tamaño del título para que no ocupe demasiadas líneas */
+        margin: 20px 0 15px 0;
+    }
+
+    #contenedor-menu {
+        padding: 10px 20px 30px; /* Reduce los espacios en blanco a los lados */
+        gap: 25px; /* Disminuye un poco la separación entre las tarjetas */
+    }
+
+    .estilo-cont {
+        padding: 15px; /* Hace la tarjeta ligeramente más compacta */
+    }
+
+    .estilo-cont img {
+        height: 180px; /* Reduce la altura de la imagen para que el cliente no tenga que hacer tanto scroll */
+    }
+
+    .estilo-cont h3 {
+        font-size: 1.4em;
+    }
+
+    .footer {
+        padding: 25px 15px;
+    }
+}

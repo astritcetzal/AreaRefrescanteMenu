@@ -11,18 +11,17 @@ async function obtenerMenu() {
 
     // 2. El ciclo va ADENTRO de la función, después de tener los datos
     datos.forEach(bebida => {
-        
-        // Armamos la primera parte de la tarjeta (SIN cerrar el div)
         let tarjeta = `
             <div class="estilo-cont">
-                <img src="images/${bebida.IdProduct}.jpg" alt="${bebida.Nombre}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 20px;">
+                <img src="images/${bebida.IdProduct}.jpg" alt="${bebida.Nombre}" style="width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 15px;">
                 <h3>${bebida.Nombre}</h3>
-                <p>Precio: $${bebida.Precio}</p>
+                <p class="precio-badge">Precio: $${bebida.Precio}</p>
         `;
 
         // Agregamos los sabores si la bebida los tiene
         if (bebida.Sabores) {
-            tarjeta += `<p>Sabores: ${bebida.Sabores.join(', ')}</p>`; 
+            // Le agregamos la clase 'sabores-texto'
+            tarjeta += `<p class="sabores-texto">Sabores: ${bebida.Sabores.join(', ')}</p>`; 
         }
 
         // Cerramos la tarjeta al final
