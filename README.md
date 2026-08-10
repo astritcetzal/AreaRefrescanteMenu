@@ -4,6 +4,9 @@ Menú de área refrescante
 ---- 
 
 Este es un menú de un negocio real llamado "Área refrescante" con la finalidad de proporcionar una mejor información de su servicio, este negocio vende bebidas para todo tipo de público.
+## Arquitectura
+- Arquitectura Orientada a eventos (Severless)
+
 
 ## Tecnológias
 - DynamoDB
